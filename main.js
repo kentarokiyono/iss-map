@@ -1,6 +1,6 @@
 const map = new geolonia.Map('#map');
 let marker;
-let currentTimeZone;
+let timeObj;
 
 // ISS の画像をアニメーション
 function moveISS(marker) {
