@@ -172,11 +172,14 @@ const updateTimeCycle = () => {
   updateTime('.local span', localTime);
 
   // 現地時間によって地図のデザインを切り替える
-  if (localHour >= 6 && localHour < 18) {
-    map.setStyle('https://gist.githubusercontent.com/YutoChip/2542338d9312fd6eaa22b1ff46265511/raw/47fe126490cb8d79ddb5f628aad4dc4908efb043/something.json');
-  } else if (localHour >= 18 && localHour < 6 ) {
+  console.log(localHour)
+
+  if (localHour <=6 && localHour < 24) {
     map.setStyle('https://gist.githubusercontent.com/kentarokiyono/487e70134441af71e2b4b132cc0ffaa0/raw/11ea20dffa8bcd4c71693916e9ade98ff04fa994/night.json');
+  } else if (localHour >6) {
+    map.setStyle('https://raw.githubusercontent.com/naogify/evangelion-style/gh-pages/style.json');
   }
+
 
 }
 setInterval(updateTimeCycle, 1000);
